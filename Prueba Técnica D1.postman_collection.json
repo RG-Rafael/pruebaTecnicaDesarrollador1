@@ -1,0 +1,193 @@
+{
+  "info": {
+    "_postman_id": "ce806f15-6226-45f3-9d8b-b91dde48f75d",
+    "name": "Prueba Técnica D1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52240580",
+    "_collection_link": "https://go.postman.co/collection/52240580-ce806f15-6226-45f3-9d8b-b91dde48f75d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "ListarUsuarios",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/users?sortedBy=id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users"
+          ],
+          "query": [
+            {
+              "key": "sortedBy",
+              "value": "email",
+              "disabled": true
+            },
+            {
+              "key": "sortedBy",
+              "value": "id"
+            },
+            {
+              "key": "sortedBy",
+              "value": "name",
+              "disabled": true
+            },
+            {
+              "key": "sortedBy",
+              "value": "phone",
+              "disabled": true
+            },
+            {
+              "key": "sortedBy",
+              "value": "tax_id",
+              "disabled": true
+            },
+            {
+              "key": "sortedBy",
+              "value": "created_at",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listar con filter",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/users?filter=name:eq:user1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users"
+          ],
+          "query": [
+            {
+              "key": "filter",
+              "value": "name:eq:user1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "guardar",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"user4\",\r\n  \"email\": \"user4@mail.com\",\r\n  \"password\": \"H0l4\",\r\n  \"phone\": \"+1 55 555 555 76\",\r\n  \"tax_id\": \"AARR990101HHH\",\r\n  \"created_at\": \"01-01-2026 00:00:00\",\r\n  \"addresses\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"workaddress\",\r\n      \"street\": \"street No. 15\",\r\n      \"country_code\": \"MX\"\r\n    },\r\n    {\r\n      \"id\": 2,\r\n      \"name\": \"homeaddress\",\r\n      \"street\": \"street No. 25\",\r\n      \"country_code\": \"MX\"\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/guardar",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "guardar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "editar",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"phone\": \"+52 55 1111 2245\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/c3c6cc40-5a23-4f25-b9e3-ba9ea63d4f60",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "c3c6cc40-5a23-4f25-b9e3-ba9ea63d4f60"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "borrar",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/users/c3c6cc40-5a23-4f25-b9e3-ba9ea63d4f60",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "c3c6cc40-5a23-4f25-b9e3-ba9ea63d4f60"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " {   \r\n    \"email\": \"user1@mail.com\",\r\n    \"name\": \"user1\",\r\n    \"password\": \"7c4a8d09ca3762af61e59520943dc26494f8941b\",\r\n    \"tax_id\": \"AARR990101XXX\"\r\n }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
