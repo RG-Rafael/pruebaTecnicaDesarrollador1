@@ -46,13 +46,13 @@ public class UserWS {
 		return userService.createUser(user);
 	}
 	
-	//http://localhost:8080/users/id}
+	//http://localhost:8080/users/id
 	@PatchMapping(path="/{id}")
 	public User updateUser(@PathVariable("id") UUID id, @RequestBody User user) {
 		return userService.updatedUser(id, user);
 	}
 	
-	//http://localhost:8080/users/id}
+	//http://localhost:8080/users/id
 	@DeleteMapping("/{id}")
 	public String deleteUser(@PathVariable("id") UUID id){
 	    return userService.deleteUser(id);
